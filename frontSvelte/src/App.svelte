@@ -3,7 +3,7 @@
   import Navbar from "./components/Navbar.svelte";
   import Home from "./views/Home.svelte";
   //import About from "./views/About.svelte";
-  //import Login from "./views/Login.svelte";
+  import Login from "./views/Login.svelte";
   import Perfil from "./views/Perfil.svelte";
 </script>
 
@@ -16,7 +16,7 @@
       <h1>About</h1>
     </Route>
     <Route path="/login">
-      <h1>Login</h1>
+      <Login />
     </Route>
     <Route path="/perfil">
       <Perfil />
