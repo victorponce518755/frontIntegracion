@@ -27,9 +27,9 @@
       <li class="nav-item">
         <Link class="nav-link" to="/">Home</Link>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <Link class="nav-link" to="/about">About</Link>
-      </li>
+      </li> -->
       <li class="nav-item">
         <Link class="nav-link" to="/perfil">Perfil</Link>
       </li>
