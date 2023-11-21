@@ -10,7 +10,7 @@
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <Link class="navbar-brand" to="/">Navbar</Link>
+  <Link class="navbar-brand" to="/">Conciertos APP</Link>
   <button
     class="navbar-toggler"
     type="button"
