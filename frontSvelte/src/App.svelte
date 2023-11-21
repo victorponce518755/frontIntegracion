@@ -18,7 +18,7 @@
       <h1>About</h1>
     </Route>
     <Route path="/login">
-      <Login />
+      <Login {loginURL} />
     </Route>
     <Route path="/perfil">
       <Perfil />
