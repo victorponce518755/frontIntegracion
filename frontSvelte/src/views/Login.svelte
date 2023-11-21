@@ -39,7 +39,7 @@
             localStorage.setItem("username", data.nombre);
             localStorage.setItem("is_admin", data.admin);
 
-            navigate("/", { replace: true });
+            navigate("/perfil", { replace: true });
             console.log("Inicio de sesión exitoso:", data);
           } catch (error) {
             console.error("Error al procesar la respuesta JSON:", error);
