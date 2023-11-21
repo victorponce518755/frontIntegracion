@@ -4,7 +4,6 @@
 </script>
 
 <Navbar />
-
 <main class="container">
-  <h1>Estas en Home</h1>
+  <h1>Estas en tu perfil</h1>
 </main>

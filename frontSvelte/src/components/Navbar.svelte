@@ -9,15 +9,8 @@
   };
 </script>
 
-<nav>
-  <Link to="/perfil">Perfil</Link>
-  <Link to="/">Home</Link>
-  <Link to="/about">About</Link>
-  <Link to="/login">Login</Link>
-</nav>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <Link class="navbar-brand" to="/">Navbar</Link>
   <button
     class="navbar-toggler"
     type="button"
@@ -31,19 +24,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >Home <span class="sr-only">(current)</span></a
-        >
+      <li class="nav-item">
+        <Link class="nav-link" to="/">Home</Link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <Link class="nav-link" to="/about">About</Link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <Link class="nav-link" to="/perfil">Perfil</Link>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <Link class="nav-link" to="/login">Login</Link>
       </li>
     </ul>
   </div>

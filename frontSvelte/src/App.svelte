@@ -4,10 +4,10 @@
   import Home from "./views/Home.svelte";
   //import About from "./views/About.svelte";
   //import Login from "./views/Login.svelte";
-  //import Perfil from "./views/Perfil.svelte";
+  import Perfil from "./views/Perfil.svelte";
 </script>
 
-<main class="container">
+<main>
   <Router>
     <Route path="/">
       <Home />
@@ -19,7 +19,7 @@
       <h1>Login</h1>
     </Route>
     <Route path="/perfil">
-      <h1>Perfil</h1>
+      <Perfil />
     </Route>
   </Router>
 </main>
