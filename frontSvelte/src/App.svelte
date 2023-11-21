@@ -5,6 +5,8 @@
   //import About from "./views/About.svelte";
   import Login from "./views/Login.svelte";
   import Perfil from "./views/Perfil.svelte";
+
+  export const loginURL = "http://34.27.21.169:5000/";
 </script>
 
 <main>
