@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-3" />
     <div class="col-md-6">
-      <h1 class="text-center">Estas en Home</h1>
+      <h1 class="text-center">Bienvenido</h1>
     </div>
     <div class="col-md-3" />
   </div>
