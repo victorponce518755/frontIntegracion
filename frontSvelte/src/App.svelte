@@ -7,6 +7,7 @@
   import Perfil from "./views/Perfil.svelte";
 
   export const loginURL = "http://34.27.21.169:5000/";
+  export const eventoURL = "http://34.27.21.169:5000/";
 </script>
 
 <main>
