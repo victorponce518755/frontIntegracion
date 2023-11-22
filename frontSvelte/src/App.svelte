@@ -13,7 +13,7 @@
 <main>
   <Router>
     <Route path="/">
-      <Home />
+      <Home {eventoURL} />
     </Route>
     <Route path="/about">
       <h1>About</h1>

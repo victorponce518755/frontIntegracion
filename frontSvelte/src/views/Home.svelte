@@ -2,6 +2,8 @@
   import { Router, Link, Route } from "svelte-routing";
   import Navbar from "../components/Navbar.svelte";
   import Cards from "../components/eventCard/cards.svelte";
+
+  export let eventoURL;
 </script>
 
 <Navbar />
@@ -18,7 +20,7 @@
   <div class="row">
     <div class="col-md-3" />
     <div class="col-md-6">
-      <Cards />
+      <Cards {eventoURL} />
     </div>
     <div class="col-md-3" />
   </div>
