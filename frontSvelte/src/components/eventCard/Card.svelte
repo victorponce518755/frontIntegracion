@@ -1,29 +1,32 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
+  import { navigate } from "svelte-routing/src/history";
 
   import img from "../eventCard/assets/concierto.jpg";
 
-  export let evento;
+  export let ev;
 
-  console.log(evento);
-
-  let data;
+  const irDetalles = () => {
+    navigate(`/detalle/${ev.idEvento}`, { replace: true });
+  };
 </script>
 
 <main>
   <div class="card" style="width: 15rem;">
     <img class="card-img-top" src={img} alt="Card image cap" />
     <div class="card-body">
-      <h5 class="card-title">{evento.nombre}</h5>
+      <h5 class="card-title">{ev.nombre}</h5>
       <p class="card-text">
-        Fecha: {evento.fecha}
+        Fecha: {ev.fecha}
         <br />
-        Hora: {evento.hora}
+        Hora: {ev.hora}
         <br />
-        Lugares Disponibles: {evento.cantidadBoletosNormales +
-          evento.cantidadBoletosVip}
+        Lugares Disponibles: {ev.cantidadBoletosNormales +
+          ev.cantidadBoletosVip}
       </p>
-      <a href="#" class="btn btn-primary">Compra Ya</a>
+      <Link to={`detalle/${ev.idEvento}`} class="btn btn-primary"
+        >Compra Ya</Link
+      >
     </div>
   </div>
 </main>
