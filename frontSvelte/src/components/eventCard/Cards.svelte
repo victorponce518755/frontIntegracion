@@ -3,11 +3,12 @@
   import Card from "./card.svelte";
   import { onMount } from "svelte";
 
+  export let eventoURL;
+  console.log("eventoURL", eventoURL);
+  let url = `${eventoURL}eventos/evento`;
+  console.log(url);
+
   async function obtenerInfoEventos() {
-    export let eventoURL;
-    console.log("eventoURL", eventoURL);
-    let url = `${eventoURL}eventos/evento`;
-    console.log(url);
     try {
       const response = await fetch(url, {
         method: "GET",
