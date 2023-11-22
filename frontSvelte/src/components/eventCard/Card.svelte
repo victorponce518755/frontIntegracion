@@ -5,10 +5,6 @@
   import img from "../eventCard/assets/concierto.jpg";
 
   export let ev;
-
-  const irDetalles = () => {
-    navigate(`/detalle/${ev.idEvento}`, { replace: true });
-  };
 </script>
 
 <main>
