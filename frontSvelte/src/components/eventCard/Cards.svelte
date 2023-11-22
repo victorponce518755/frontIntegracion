@@ -25,6 +25,7 @@
         try {
           const data = await response.json();
           eventos = Array.isArray(data) ? data : [];
+          console.log("soy eventos", eventos);
           console.log("Respuesta JSON:", data);
 
           console.log("Datos obtenidos exitosamente", data);

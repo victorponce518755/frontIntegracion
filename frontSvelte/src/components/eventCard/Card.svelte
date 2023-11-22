@@ -3,7 +3,11 @@
 
   import img from "../eventCard/assets/concierto.jpg";
 
-  let evento;
+  export let evento;
+
+  console.log(evento);
+
+  let data;
 </script>
 
 <main>
