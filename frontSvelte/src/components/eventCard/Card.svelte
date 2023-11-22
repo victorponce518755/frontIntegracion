@@ -16,8 +16,12 @@
     <div class="card-body">
       <h5 class="card-title">{evento.nombre}</h5>
       <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        Fecha: {evento.fecha}
+        <br />
+        Hora: {evento.hora}
+        <br />
+        Lugares Disponibles: {evento.cantidadBoletosNormales +
+          evento.cantidadBoletosVip}
       </p>
       <a href="#" class="btn btn-primary">Compra Ya</a>
     </div>
