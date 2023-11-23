@@ -3,14 +3,17 @@
   import Navbar from "../components/Navbar.svelte";
   import Cards from "../components/eventCard/cards.svelte";
   import { getContext, onMount } from "svelte";
+  import { eventStore } from "../stores/eventStore";
 
+  //es el url que viene desde App.svelte
   export let eventoURL;
-  export let idEvento;
-  console.log("idEvento", idEvento);
 
-  let url = `${eventoURL}eventos/evento/${idEvento}`;
-  console.log("url", url);
-  async function obtenerInfoEventos() {
+  //variables para obtener los datos del evento desde el store
+  let evento = null;
+
+  //funcion para obtener los datos del evento, con el id que viene desde el store
+  async function obtenerInfoEventos(id) {
+    let url = `${eventoURL}eventos/evento/${id}`;
     try {
       const response = await fetch(url, {
         method: "GET",
@@ -24,10 +27,7 @@
       } else if (response.ok) {
         try {
           const data = await response.json();
-          eventos = Array.isArray(data) ? data : [];
-          console.log("soy eventos", eventos);
-          console.log("Respuesta JSON:", data);
-
+          evento = data;
           console.log("Datos obtenidos exitosamente", data);
         } catch (error) {
           console.error("Error al procesar la respuesta JSON:", error);
@@ -41,9 +41,18 @@
     }
   }
 
+  //funcion para obtener el id del evento desde el store, cuando cambie y se inicialice el componente
   onMount(() => {
-    obtenerInfoEventos();
+    const unsubscribe = eventStore.subscribe((value) => {
+      if (value !== null) {
+        obtenerInfoEventos(value);
+      }
+    });
+    return unsubscribe;
   });
 </script>
 
-<main />
+<main>
+  <Navbar />
+  <h1>Estas en detalle vacio</h1>
+</main>

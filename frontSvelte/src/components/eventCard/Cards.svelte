@@ -4,7 +4,6 @@
   import { onMount } from "svelte";
 
   export let eventoURL;
-  console.log("eventoURL", eventoURL);
   let url = `${eventoURL}eventos/evento`;
   console.log(url);
 
@@ -25,9 +24,6 @@
         try {
           const data = await response.json();
           eventos = Array.isArray(data) ? data : [];
-          console.log("soy eventos", eventos);
-          console.log("Respuesta JSON:", data);
-
           console.log("Datos obtenidos exitosamente", data);
         } catch (error) {
           console.error("Error al procesar la respuesta JSON:", error);
@@ -69,29 +65,3 @@
     </div>
   </div>
 </main>
-
-<!-- 
-<main>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3" />
-        <div class="col-md-6">
-          <h1 class="text-center">Eventos</h1>
-        </div>
-        <div class="col-md-3" />
-      </div>
-      {#each eventos as evento (evento.idEvento)}
-        {#if evento.idEvento % 3 === 1}
-          <!-- Inicia una nueva fila después de cada tercer evento -->
-<!-- <div class="row">
-            {#each eventos.slice(evento.idEvento - 1, evento.idEvento + 2) as ev (ev.idEvento)}
-              <div class="col-md-3 mb-4" key={ev.idEvento}>
-                <Card {evento} />
-              </div>
-            {/each}
-          </div>
-        {/if}
-      {/each}
-    </div>
-  </main>
-   -->
