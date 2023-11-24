@@ -26,7 +26,7 @@
       <span class="navbar-toggler-icon" />
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <Link class="nav-link" to="/">Home</Link>
         </li>
@@ -42,11 +42,16 @@
           >
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <Link class="nav-link p-0" to="/cart">
+            <i class="bi bi-cart" />
+          </Link>
+        </li>
+      </ul>
     </div>
   {:else if userType == 0}
-    <!-- else content here --><Link class="navbar-brand" to="/"
-      >Conciertos APP</Link
-    >
+    <Link class="navbar-brand" to="/">Conciertos APP</Link>
     <button
       class="navbar-toggler"
       type="button"
@@ -59,7 +64,7 @@
       <span class="navbar-toggler-icon" />
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <Link class="nav-link" to="/">Home</Link>
         </li>
@@ -71,8 +76,15 @@
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/login" on:click={cerrarSesion}
-            >Cerrar Sesion</Link
+            >Cerrar Sesión Admi</Link
           >
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <Link class="nav-link p-0" to="/cart">
+            <i class="bi bi-cart" />
+          </Link>
         </li>
       </ul>
     </div>

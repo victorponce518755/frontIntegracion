@@ -6,6 +6,7 @@
   import Login from "./views/Login.svelte";
   import Perfil from "./views/Perfil.svelte";
   import Detalles from "./views/Detalles.svelte";
+  import Cart from "./views/Cart.svelte";
 
   export const loginURL = "http://34.42.187.190:5000/";
   export const eventoURL = "http://34.42.187.190:5000/";
@@ -27,6 +28,9 @@
     </Route>
     <Route path="/detalle">
       <Detalles {eventoURL} />
+    </Route>
+    <Route path="/cart">
+      <Cart />
     </Route>
   </Router>
 </main>
