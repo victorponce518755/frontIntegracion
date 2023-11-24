@@ -6,6 +6,9 @@
   import { eventStore } from "../stores/eventStore";
   import img from "../components/eventCard/assets/concierto.jpg";
 
+  //Se tomo como base para el detalle del producto el siguiente link:
+  //https://bbbootstrap.com/snippets/bootstrap-ecommerce-single-product-page-size-attribute-59223596
+
   //es el url que viene desde App.svelte
   export let eventoURL;
 
