@@ -4,6 +4,7 @@
   import Cards from "../components/eventCard/cards.svelte";
   import { getContext, onMount } from "svelte";
   import { eventStore } from "../stores/eventStore";
+  import img from "../components/eventCard/assets/concierto.jpg";
 
   //es el url que viene desde App.svelte
   export let eventoURL;
@@ -54,5 +55,64 @@
 
 <main>
   <Navbar />
-  <h1>Estas en detalle vacio</h1>
+  <div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10">
+        <div class="card">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="images p-3">
+                <div class="text-center p-4">
+                  <img src={img} width="500" />
+                </div>
+                <div class="thumbnail text-center" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="product p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center" />
+                  <i class="fa fa-shopping-cart text-muted" />
+                </div>
+                <div class="mt-4 mb-3">
+                  <span class="text-uppercase text-muted brand">Detalles</span>
+                  <h5 class="text-uppercase">{evento?.nombre}</h5>
+                  <div class="price d-flex flex-row align-items-center">
+                    <span class="act-price">$20</span>
+                  </div>
+                </div>
+                <p>
+                  <strong> Descripcion: </strong>
+                  {evento?.descripcion}
+                </p>
+                <p>
+                  <strong>Cantidad de boletos:</strong
+                  >{evento?.cantidadBoletosNormales}
+                  <br />
+                  <strong>Cantidad de boletos Vip:</strong>
+                  {evento?.cantidadBoletosVip}
+                  <br />
+
+                  <strong>Fecha:</strong>
+                  {evento?.fecha}
+                  <br />
+                  <strong>Hora:</strong>
+                  {evento?.hora}
+                </p>
+                <div class="sizes mt-3">
+                  <h6 class="text-uppercase">Cantidad</h6>
+                  <input type="number" class="form-control-sm" min="0" />
+                </div>
+                <div class="cart mt-4 align-items-center">
+                  <button class="btn btn-danger text-uppercase mr-2 px-4"
+                    >Agregar al carrito</button
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

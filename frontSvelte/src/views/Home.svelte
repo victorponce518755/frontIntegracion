@@ -19,7 +19,7 @@
 
   <div class="row">
     <div class="col-md-3" />
-    <div class="col-md-6">
+    <div class="col-md-6 mt-3">
       <Cards {eventoURL} />
     </div>
     <div class="col-md-3" />

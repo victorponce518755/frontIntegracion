@@ -44,7 +44,7 @@
 
 <main>
   <div class="container">
-    <h1 class="text-center">Eventos</h1>
+    <h1 class="text-center mb-4">Eventos</h1>
     <div class="row">
       {#each eventos as evento, index}
         {#if index % 2 === 0}
@@ -52,7 +52,7 @@
             {#each [eventos[index], eventos[index + 1]] as ev}
               {#if ev}
                 <div
-                  class="col-md-6 mb-4 d-flex justify-content-center"
+                  class="col-sm-6 mb-4 d-flex justify-content-center"
                   key={ev.idEvento}
                 >
                   <Card {ev} />
