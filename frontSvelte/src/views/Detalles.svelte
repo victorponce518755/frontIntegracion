@@ -4,6 +4,7 @@
   import Cards from "../components/eventCard/cards.svelte";
   import { getContext, onMount } from "svelte";
   import { eventStore } from "../stores/eventStore";
+  import { cartStore } from "../stores/cartStore";
   import img from "../components/eventCard/assets/concierto.jpg";
 
   //Se tomo como base para el detalle del producto el siguiente link:
@@ -14,6 +15,12 @@
 
   //variables para obtener los datos del evento desde el store
   let evento = null;
+
+  //variable para obtener el id del evento desde el store
+  let valorEventStore = null;
+
+  // variable para obtener la cantidad de boletos que se van a comprar
+  let cantidadBoletos = 0;
 
   //funcion para obtener los datos del evento, con el id que viene desde el store
   async function obtenerInfoEventos(id) {
@@ -49,11 +56,24 @@
   onMount(() => {
     const unsubscribe = eventStore.subscribe((value) => {
       if (value !== null) {
+        valorEventStore = value; //almaceno su valor para usarlo en la funcion de agregar al carrito
         obtenerInfoEventos(value);
       }
     });
     return unsubscribe;
   });
+
+  //Funcion para agregar a la store de carritos, el id del evento y la cantidad de boletos que se van a comprar
+
+  function agregarAlCarrito() {
+    if (cantidadBoletos > 0 && evento) {
+      console.log("evento", valorEventStore, "cantidad", cantidadBoletos);
+
+      cartStore.add(valorEventStore, cantidadBoletos);
+    } else {
+      alert("No se puede agregar al carrito, cantidad de boletos no válida");
+    }
+  }
 </script>
 
 <main>
@@ -104,11 +124,17 @@
                 </p>
                 <div class="sizes mt-3">
                   <h6 class="text-uppercase">Cantidad</h6>
-                  <input type="number" class="form-control-sm" min="0" />
+                  <input
+                    type="number"
+                    class="form-control-sm"
+                    min="0"
+                    bind:value={cantidadBoletos}
+                  />
                 </div>
                 <div class="cart mt-4 align-items-center">
-                  <button class="btn btn-danger text-uppercase mr-2 px-4"
-                    >Agregar al carrito</button
+                  <button
+                    class="btn btn-danger text-uppercase mr-2 px-4"
+                    on:click={agregarAlCarrito}>Agregar al carrito</button
                   >
                 </div>
               </div>
