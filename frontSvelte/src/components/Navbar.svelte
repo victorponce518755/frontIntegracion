@@ -25,14 +25,14 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-between align-items-center"
+      id="navbarNav"
+    >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <Link class="nav-link" to="/">Home</Link>
         </li>
-        <!-- <li class="nav-item">
-        <Link class="nav-link" to="/about">About</Link>
-      </li> -->
         <li class="nav-item">
           <Link class="nav-link" to="/perfil">Perfil</Link>
         </li>
@@ -44,17 +44,19 @@
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/login" on:click={cerrarSesion}
-            >Cerrar Sesión Admi</Link
+            >Cerrar Sesión</Link
           >
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <Link class="nav-link p-0" to="/cart">
-            <i class="bi bi-cart" />
-          </Link>
-        </li>
-      </ul>
+      <div class="mr-5">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <Link class="nav-link" to="/cart">
+              <i class="bi bi-cart" />
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   {:else if userType == 0}
     <Link class="navbar-brand" to="/">Conciertos APP</Link>
@@ -69,30 +71,32 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-between align-items-center"
+      id="navbarNav"
+    >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <Link class="nav-link" to="/">Home</Link>
         </li>
-        <!-- <li class="nav-item">
-      <Link class="nav-link" to="/about">About</Link>
-    </li> -->
         <li class="nav-item">
           <Link class="nav-link" to="/perfil">Perfil</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/login" on:click={cerrarSesion}
-            >Cerrar Sesión Admi</Link
+            >Cerrar Sesión</Link
           >
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <Link class="nav-link p-0" to="/cart">
-            <i class="bi bi-cart" />
-          </Link>
-        </li>
-      </ul>
+      <div class="mr-5">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <Link class="nav-link" to="/cart">
+              <i class="bi bi-cart" />
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   {:else}
     <Link class="navbar-brand" to="/">Conciertos APP</Link>
@@ -107,17 +111,14 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-between align-items-center"
+      id="navbarNav"
+    >
       <ul class="navbar-nav">
         <li class="nav-item">
           <Link class="nav-link" to="/">Home</Link>
         </li>
-        <!-- <li class="nav-item">
-        <Link class="nav-link" to="/about">About</Link>
-      </li> -->
-        <!-- <li class="nav-item">
-          <Link class="nav-link" to="/perfil">Perfil</Link>
-        </li> -->
         <li class="nav-item">
           <Link class="nav-link" to="/login">Login</Link>
         </li>
