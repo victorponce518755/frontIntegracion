@@ -74,6 +74,10 @@
       alert("No se puede agregar al carrito, cantidad de boletos no válida");
     }
   }
+
+  function mostrarAviso() {
+    alert("No se puede agregar al carrito, cantidad de boletos no válida");
+  }
 </script>
 
 <main>

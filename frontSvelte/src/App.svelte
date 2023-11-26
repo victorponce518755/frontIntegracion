@@ -7,9 +7,11 @@
   import Perfil from "./views/Perfil.svelte";
   import Detalles from "./views/Detalles.svelte";
   import Cart from "./views/Cart.svelte";
+  import AdmiEvents from "./views/admiEvents.svelte";
+  import AdmiGraphics from "./views/admiGraphics.svelte";
 
-  export const loginURL = "http://34.41.96.254:5000/";
-  export const eventoURL = "http://34.41.96.254:5000/";
+  export const loginURL = "http://35.202.140.65:5000/";
+  export const eventoURL = "http://35.202.140.65:5000/";
 </script>
 
 <main>
@@ -31,6 +33,12 @@
     </Route>
     <Route path="/cart">
       <Cart />
+    </Route>
+    <Route path="/admiEvents">
+      <AdmiEvents />
+    </Route>
+    <Route path="/admiGraphics">
+      <AdmiGraphics />
     </Route>
   </Router>
 </main>
