@@ -10,8 +10,8 @@
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
 
-  export const loginURL = "http://35.202.140.65:5000/";
-  export const eventoURL = "http://35.202.140.65:5000/";
+  export const loginURL = "http://34.133.107.153:5000/";
+  export const eventoURL = "http://34.133.107.153:5000/";
 </script>
 
 <main>
