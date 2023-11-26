@@ -8,8 +8,8 @@
   import Detalles from "./views/Detalles.svelte";
   import Cart from "./views/Cart.svelte";
 
-  export const loginURL = "http://34.133.39.234:5000/";
-  export const eventoURL = "http://34.133.39.234:5000/";
+  export const loginURL = "http://34.41.96.254:5000/";
+  export const eventoURL = "http://34.41.96.254:5000/";
 </script>
 
 <main>
