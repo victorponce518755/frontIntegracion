@@ -1,6 +1,7 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
-  import { bind } from "svelte/internal";
+
+  import { navigate } from "svelte-routing/src/history";
 
   let idArtista = 0;
   let nombreEvento = "";
@@ -8,7 +9,7 @@
   let idSede = 0;
   let fecha = "";
   let hora = "";
-  let cantidadBoletos = 0;
+  let cantidadBoletosNormales = 0;
   let cantidadBoletosVip = 0;
 
   export let generalURL;
@@ -24,17 +25,17 @@
       idSede !== 0 &&
       fecha !== "" &&
       hora !== "" &&
-      cantidadBoletos !== 0 &&
+      cantidadBoletosNormales !== 0 &&
       cantidadBoletosVip !== 0
     ) {
       const datosEvento = {
         idArtista: idArtista,
-        nombreEvento: nombreEvento,
+        nombre: nombreEvento,
         descripcion: descripcion,
         idSede: idSede,
         fecha: fecha,
         hora: hora,
-        cantidadBoletos: cantidadBoletos,
+        cantidadBoletosNormales: cantidadBoletosNormales,
         cantidadBoletosVip: cantidadBoletosVip,
       };
 
@@ -53,7 +54,15 @@
           try {
             const data = await response.json();
             console.log("Respuesta JSON:", data);
-            navigate("/admiEvents", { replace: true });
+            idArtista = 0;
+            nombreEvento = "";
+            descripcion = "";
+            idSede = 0;
+            fecha = "";
+            hora = "";
+            cantidadBoletosNormales = 0;
+            cantidadBoletosVip = 0;
+            location.reload();
           } catch (error) {
             console.error("Error al procesar la respuesta JSON:", error);
           }
@@ -122,7 +131,7 @@
         <input
           type="number"
           class="form-control"
-          bind:value={cantidadBoletos}
+          bind:value={cantidadBoletosNormales}
         />
       </div>
       <div class="form-group">
