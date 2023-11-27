@@ -4,6 +4,12 @@
   import Cards from "../components/eventCard/cards.svelte";
 
   export let eventoURL;
+
+  //obtener valor de localstorage de user_id
+  let user_id = localStorage.getItem("user_id");
+
+  // obtener el username de localstorage
+  let username = localStorage.getItem("username");
 </script>
 
 <Navbar />
@@ -12,7 +18,11 @@
   <div class="row">
     <div class="col-md-3" />
     <div class="col-md-6">
-      <h1 class="text-center">Bienvenido</h1>
+      {#if user_id}
+        <h1 class="text-center">Bienvenido/a {username}</h1>
+      {:else}
+        <h1 class="text-center">Bienvenido</h1>
+      {/if}
     </div>
     <div class="col-md-3" />
   </div>
