@@ -28,7 +28,7 @@
 
 <Navbar />
 <main class="container">
-  <section class="h-100" style="background-color: #eee;">
+  <section class="h-100 mt-5" style="background-color: #eee;">
     <div class="container h-100 py-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-10">
@@ -42,7 +42,7 @@
               </div>
             {:else}
               {#each listaEventos as evento}
-                <CartCard {evento} {generalURL} />
+                <CartCard eventId={evento} {generalURL} />
               {/each}
             {/if}
           </div>
@@ -62,30 +62,6 @@
       </div>
     </div>
   </section>
-
-  <!--   <div class="row">
-    <div class="col-md-3" />
-    <div class="col-md-6">
-      <h1 class="text-center">Carrito</h1>
-    </div>
-    <div class="col-md-3" />
-  </div>
-
-  <div class="row">
-    <div class="col-md-3" />
-    <div class="col-md-6">
-      <h1 class="text-center">Contenido</h1>
-    </div>
-    <div class="col-md-3" />
-  </div>
-
-  <div class="row">
-    <div class="col-md-3" />
-    <div class="col-md-6 text-center">
-
-    </div>
-    <div class="col-md-3" />
-  </div> -->
 </main>
 
 <style>
