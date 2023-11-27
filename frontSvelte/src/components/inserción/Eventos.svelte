@@ -79,7 +79,7 @@
   }
 </script>
 
-<main>
+<main class="border border-2 border-dark">
   <h3 class="mt-4">Insertar Eventos</h3>
   <p>Porfavor ingresa los datos de tu evento</p>
   <div class="container mt-4">

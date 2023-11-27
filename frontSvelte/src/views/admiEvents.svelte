@@ -15,7 +15,7 @@
   <Navbar />
   <div class="container text-center mt-4">
     <div class="row text-center">
-      <div class="col-md-6 border border-2 border-dark">
+      <div class="col-md-6">
         <Eventos {generalURL} />
       </div>
       <div class="col-md-6">
