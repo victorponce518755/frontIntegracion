@@ -22,6 +22,9 @@
   // variable para obtener la cantidad de boletos que se van a comprar
   let cantidadBoletos = 0;
 
+  //obtener valor de localstorage de user_id
+  let user_id = localStorage.getItem("user_id");
+
   //funcion para obtener los datos del evento, con el id que viene desde el store
   async function obtenerInfoEventos(id) {
     let url = `${eventoURL}eventos/evento/${id}`;
@@ -61,6 +64,11 @@
       }
     });
     return unsubscribe;
+
+    const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltips.forEach((element) => {
+      new bootstrap.Tooltip(element);
+    });
   });
 
   //Funcion para agregar a la store de carritos, el id del evento y la cantidad de boletos que se van a comprar
@@ -77,6 +85,15 @@
 
   function mostrarAviso() {
     alert("No se puede agregar al carrito, cantidad de boletos no válida");
+  }
+
+  function mostrarTooltip() {
+    if (!user_id) {
+      const tooltip = new bootstrap.Tooltip(
+        document.querySelector('[data-bs-toggle="tooltip"]')
+      );
+      tooltip.show();
+    }
   }
 </script>
 
@@ -136,10 +153,19 @@
                   />
                 </div>
                 <div class="cart mt-4 align-items-center">
-                  <button
-                    class="btn btn-danger text-uppercase mr-2 px-4"
-                    on:click={agregarAlCarrito}>Agregar al carrito</button
-                  >
+                  {#if user_id}
+                    <button
+                      class="btn btn-danger text-uppercase mr-2 px-4"
+                      on:click={agregarAlCarrito}>Agregar al carrito</button
+                    >
+                  {:else}
+                    <button
+                      class="btn btn-danger text-uppercase mr-2 px-4 disabled"
+                      data-bs-toggle="tooltip"
+                      title="Por favor, inicia sesión para comprar"
+                      on:focus={mostrarTooltip}>Agregar al carrito</button
+                    >
+                  {/if}
                 </div>
               </div>
             </div>
