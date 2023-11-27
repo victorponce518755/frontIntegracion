@@ -74,7 +74,7 @@
   <h3 class="mt-4">Insertar Eventos</h3>
   <p>Porfavor ingresa los datos de tu evento</p>
   <div class="container mt-4">
-    <form>
+    <form on:submit|preventDefault={insertarEvento}>
       <div class="form-group">
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label>Nombre del Evento:</label>
