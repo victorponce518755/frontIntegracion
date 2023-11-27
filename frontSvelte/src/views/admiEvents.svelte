@@ -16,7 +16,7 @@
   <div class="container text-center mt-4">
     <div class="row text-center">
       <div class="col-md-6 border border-2 border-dark">
-        <Eventos />
+        <Eventos {generalURL} />
       </div>
       <div class="col-md-6">
         <div class="row">

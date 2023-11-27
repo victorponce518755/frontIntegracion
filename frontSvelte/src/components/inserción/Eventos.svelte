@@ -10,6 +10,64 @@
   let hora = "";
   let cantidadBoletos = 0;
   let cantidadBoletosVip = 0;
+
+  export let generalURL;
+  console.log(generalURL);
+  let url = `${generalURL}eventos/evento`;
+  console.log(url);
+
+  async function insertarEvento() {
+    if (
+      idArtista !== 0 &&
+      nombreEvento !== "" &&
+      descripcion !== "" &&
+      idSede !== 0 &&
+      fecha !== "" &&
+      hora !== "" &&
+      cantidadBoletos !== 0 &&
+      cantidadBoletosVip !== 0
+    ) {
+      const datosEvento = {
+        idArtista: idArtista,
+        nombreEvento: nombreEvento,
+        descripcion: descripcion,
+        idSede: idSede,
+        fecha: fecha,
+        hora: hora,
+        cantidadBoletos: cantidadBoletos,
+        cantidadBoletosVip: cantidadBoletosVip,
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datosEvento),
+        });
+
+        if (response.status === 405) {
+          console.log("Error: Método no permitido (405)");
+        } else if (response.ok) {
+          try {
+            const data = await response.json();
+            console.log("Respuesta JSON:", data);
+            navigate("/admiEvents", { replace: true });
+          } catch (error) {
+            console.error("Error al procesar la respuesta JSON:", error);
+          }
+        } else {
+          const text = await response.text();
+          console.log("Respuesta no válida:", text);
+        }
+      } catch (error) {
+        console.error("Error al agregar evento", error);
+      }
+    } else {
+      console.log("Error: Campos vacíos");
+    }
+  }
 </script>
 
 <main>
