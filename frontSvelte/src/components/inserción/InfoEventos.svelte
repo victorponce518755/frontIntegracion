@@ -4,12 +4,12 @@
   import { onMount } from "svelte";
 
   export let generalURL;
-  let url = `${generalURL}artistas/artista`;
+  let url = `${generalURL}eventos/evento`;
   console.log(url);
 
-  let artistas = [];
+  let eventos = [];
 
-  async function obtenerInfoArtistas() {
+  async function obtenerInfoEventos() {
     try {
       const response = await fetch(url, {
         method: "GET",
@@ -23,7 +23,7 @@
       } else if (response.ok) {
         try {
           const data = await response.json();
-          artistas = Array.isArray(data) ? data : [];
+          eventos = Array.isArray(data) ? data : [];
           console.log("Datos obtenidos exitosamente", data);
         } catch (error) {
           console.error("Error al procesar la respuesta JSON:", error);
@@ -38,7 +38,7 @@
   }
 
   onMount(() => {
-    obtenerInfoArtistas();
+    obtenerInfoEventos();
   });
 </script>
 
@@ -56,10 +56,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Arena Monterrey</td>
-            </tr>
+            {#each eventos as evento}
+              <tr>
+                <td>{evento.idEvento}</td>
+                <td>{evento.nombre}</td>
+              </tr>
+            {/each}
           </tbody>
         </table>
       </div>
