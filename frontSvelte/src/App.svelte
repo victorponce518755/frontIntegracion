@@ -10,8 +10,9 @@
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
 
-  export const loginURL = "http://34.133.107.153:5000/";
-  export const eventoURL = "http://34.133.107.153:5000/";
+  export const generalURL = "http://34.30.202.107:5000/";
+  export const loginURL = "http://34.30.202.107:5000/";
+  export const eventoURL = "http://34.30.202.107:5000/";
 </script>
 
 <main>
@@ -35,7 +36,7 @@
       <Cart />
     </Route>
     <Route path="/admiEvents">
-      <AdmiEvents />
+      <AdmiEvents {generalURL} />
     </Route>
     <Route path="/admiGraphics">
       <AdmiGraphics />

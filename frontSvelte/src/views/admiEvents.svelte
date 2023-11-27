@@ -7,6 +7,8 @@
   import InfoArtistas from "../components/inserción/InfoArtistas.svelte";
   import InfoSedes from "../components/inserción/InfoSedes.svelte";
   import InfoEventos from "../components/inserción/InfoEventos.svelte";
+
+  export let generalURL;
 </script>
 
 <main>
@@ -19,17 +21,17 @@
       <div class="col-md-6">
         <div class="row">
           <div class="col">
-            <InfoArtistas />
+            <InfoArtistas {generalURL} />
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <InfoSedes />
+            <InfoSedes {generalURL} />
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <InfoEventos />
+            <InfoEventos {generalURL} />
           </div>
         </div>
         <div>
