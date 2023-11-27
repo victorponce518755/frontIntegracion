@@ -40,12 +40,21 @@ const createCarritoStore = () => {
     console.log("Carrito reseteado");
   };
 
+  const getEventIds = () => {
+    const eventIds = [];
+    subscribe((carritos) => {
+      eventIds.push(...carritos.eventIds);
+    })();
+    return eventIds;
+  };
+
   return {
     subscribe,
     set,
     add,
     remove,
     resetStore,
+    getEventIds,
   };
 };
 

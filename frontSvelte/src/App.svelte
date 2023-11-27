@@ -33,7 +33,7 @@
       <Detalles {eventoURL} />
     </Route>
     <Route path="/cart">
-      <Cart />
+      <Cart {generalURL} />
     </Route>
     <Route path="/admiEvents">
       <AdmiEvents {generalURL} />
