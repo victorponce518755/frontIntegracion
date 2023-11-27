@@ -22,6 +22,7 @@
 
   const borrarCarrito = () => {
     cartStore.resetStore();
+    alert("Carrito borrado");
     location.reload();
   };
 </script>

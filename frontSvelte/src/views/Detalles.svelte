@@ -68,8 +68,8 @@
   function agregarAlCarrito() {
     if (cantidadBoletos > 0 && evento) {
       console.log("evento", valorEventStore, "cantidad", cantidadBoletos);
-
       cartStore.add(valorEventStore, cantidadBoletos);
+      alert("Se agrego al carrito");
     } else {
       alert("No se puede agregar al carrito, cantidad de boletos no válida");
     }
