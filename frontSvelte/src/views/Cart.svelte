@@ -51,7 +51,7 @@
   };
 
   const obtenerTipoAleatorio = () => {
-    const tipos = ["normal", "vip"];
+    const tipos = ["Normal", "VIP"];
     const indiceAleatorio = Math.floor(Math.random() * tipos.length);
     return tipos[indiceAleatorio];
   };
@@ -59,6 +59,7 @@
   //FETCH PARA GENERAR EL BOLETO##############################################
   const pagar = async () => {
     const listaEventos = cartStore.getEventIds();
+    console.log("Lista de eventos: ", listaEventos);
 
     if (listaEventos.length === 0) {
       alert("No hay eventos en el carrito");
@@ -67,11 +68,10 @@
 
     try {
       for (const evento of listaEventos) {
-        // Generar valores aleatorios para el boleto
         const asiento = generarAsientoAleatorio();
         const tipoAsiento = obtenerTipoAleatorio();
         const precio = priceStore.getRandomPrice();
-        const idUsuario = localStorage.getItem("user_id"); // Reemplaza con el ID del usuario correspondiente
+        const idUsuario = localStorage.getItem("user_id");
         const requestBody = {
           idEvento: evento,
           idUsuario,
@@ -137,8 +137,10 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
-                  <button type="button" class="btn btn-warning btn-block btn-lg"
-                    >Pagar</button
+                  <button
+                    type="button"
+                    on:click={pagar}
+                    class="btn btn-warning btn-block btn-lg">Pagar</button
                   >
                   <button
                     on:click={borrarCarrito}
