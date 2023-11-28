@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 const createPriceStore = () => {
-  const { subscribe, update } = writable([]);
+  const { subscribe, update, set } = writable([]);
 
   const setPrice = (newPrice) => {
     update((prices) => {
@@ -19,10 +19,17 @@ const createPriceStore = () => {
     return total;
   };
 
+  const resetStore = () => {
+    set([]);
+    console.log("Precios reseteados");
+  };
+
   return {
     subscribe,
     setPrice,
+    set,
     getTotalPrice,
+    resetStore,
   };
 };
 

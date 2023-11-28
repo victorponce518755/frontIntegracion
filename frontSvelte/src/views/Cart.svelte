@@ -23,9 +23,16 @@
 
   const borrarCarrito = () => {
     cartStore.resetStore();
+    priceStore.resetStore();
     alert("Carrito borrado");
     location.reload();
   };
+
+  let total = 0;
+
+  const unsubscribe = priceStore.subscribe((prices) => {
+    total = priceStore.getTotalPrice();
+  });
 </script>
 
 <Navbar />
@@ -63,7 +70,7 @@
                   >
                 </div>
                 <div class="col-md-4"></div>
-                <div class="col-md-4"><h1>Total:</h1></div>
+                <div class="col-md-4"><h1>Total:{total}</h1></div>
               </div>
             </div>
             <div></div>
