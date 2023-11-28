@@ -1,6 +1,6 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
-  import Card from "./card.svelte";
+  import Card from "./Card.svelte";
   import { onMount } from "svelte";
 
   export let eventoURL;
