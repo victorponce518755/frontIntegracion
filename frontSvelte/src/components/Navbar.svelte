@@ -80,7 +80,7 @@
           <Link class="nav-link" to="/">Eventos</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/perfil">Perfil</Link>
+          <Link class="nav-link" to="/perfil">Mis Boletos</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/login" on:click={cerrarSesion}
