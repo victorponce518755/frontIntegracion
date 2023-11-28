@@ -1,6 +1,7 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
   import { onMount } from "svelte";
+  import { priceStore } from "../../stores/priceStore";
 
   import img from "../eventCard/assets/concierto.jpg";
 
@@ -13,6 +14,21 @@
   export let generalURL;
   let url = `${generalURL}eventos/evento/${eventId}`;
   console.log(url);
+
+  //funcion para generar un precio random puede ser 500 ,750 o 1000
+  let precio;
+  const generarPrecioRandom = () => {
+    let opcion = Math.floor(Math.random() * 3) + 1;
+    if (opcion == 1) {
+      precio = 500;
+    } else if (opcion == 2) {
+      precio = 750;
+    } else {
+      precio = 1000;
+    }
+    priceStore.setPrice(precio);
+    return precio;
+  };
 
   async function obtenerInfoEventos() {
     try {
@@ -29,6 +45,7 @@
         try {
           const data = await response.json();
           eventos = data;
+
           console.log("Datos obtenidos exitosamente", data);
         } catch (error) {
           console.error("Error al procesar la respuesta JSON:", error);
@@ -43,6 +60,7 @@
   }
 
   onMount(() => {
+    generarPrecioRandom();
     obtenerInfoEventos();
   });
 </script>
@@ -72,7 +90,7 @@
           />
         </div>
         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-          <h5 class="mb-0">$20.00</h5>
+          <h5 class="mb-0">Precio: ${precio}</h5>
         </div>
         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
           <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a

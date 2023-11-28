@@ -7,6 +7,7 @@
   import CartCard from "../components/cartComponent/cartCard.svelte";
 
   import { cartStore } from "../stores/cartStore";
+  import { priceStore } from "../stores/priceStore";
   import { onMount } from "svelte";
 
   export let generalURL;
@@ -50,14 +51,22 @@
 
           <div class="card">
             <div class="card-body">
-              <button type="button" class="btn btn-warning btn-block btn-lg"
-                >Pagar</button
-              >
-              <button
-                on:click={borrarCarrito}
-                class="btn btn-danger btn-block btn-lg">Borrar Carrito</button
-              >
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-warning btn-block btn-lg"
+                    >Pagar</button
+                  >
+                  <button
+                    on:click={borrarCarrito}
+                    class="btn btn-danger btn-block btn-lg"
+                    >Borrar Carrito</button
+                  >
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><h1>Total:</h1></div>
+              </div>
             </div>
+            <div></div>
           </div>
         </div>
       </div>
