@@ -1,7 +1,7 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
   import Navbar from "../components/Navbar.svelte";
-  import Cards from "../components/eventCard/cards.svelte";
+  import Cards from "../components/eventCard/Cards.svelte";
 
   export let eventoURL;
 
