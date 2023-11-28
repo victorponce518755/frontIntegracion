@@ -31,7 +31,7 @@
     >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <Link class="nav-link" to="/">Home</Link>
+          <Link class="nav-link" to="/">Eventos</Link>
         </li>
         <!-- <li class="nav-item">
           <Link class="nav-link" to="/perfil">Perfil</Link>
@@ -77,7 +77,7 @@
     >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <Link class="nav-link" to="/">Home</Link>
+          <Link class="nav-link" to="/">Eventos</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/perfil">Perfil</Link>
@@ -117,7 +117,7 @@
     >
       <ul class="navbar-nav">
         <li class="nav-item">
-          <Link class="nav-link" to="/">Home</Link>
+          <Link class="nav-link" to="/">Eventos</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/login">Login</Link>

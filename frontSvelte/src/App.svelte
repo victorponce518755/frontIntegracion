@@ -10,9 +10,10 @@
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
 
-  export const generalURL = "http://34.30.202.107:5000/";
-  export const loginURL = "http://34.30.202.107:5000/";
-  export const eventoURL = "http://34.30.202.107:5000/";
+  // solo se cambia esta variable para cambiar la url de la api
+  export const eventoURL = "http://34.123.29.17:5000/";
+  export const generalURL = `${eventoURL}`;
+  export const loginURL = `${eventoURL}`;
 </script>
 
 <main>
