@@ -1,7 +1,7 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
   import Navbar from "../components/Navbar.svelte";
-  import Cards from "../components/eventCard/cards.svelte";
+
   import { getContext, onMount } from "svelte";
   import { eventStore } from "../stores/eventStore";
   import { cartStore } from "../stores/cartStore";
