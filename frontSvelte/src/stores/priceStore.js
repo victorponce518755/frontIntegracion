@@ -24,12 +24,23 @@ const createPriceStore = () => {
     console.log("Precios reseteados");
   };
 
+  //funcion que devuelve random un precio random de la lista de precios
+  const getRandomPrice = () => {
+    let randomPrice = 0;
+    subscribe((prices) => {
+      randomPrice = prices[Math.floor(Math.random() * prices.length)];
+    })();
+    console.log("Precio random:", randomPrice);
+    return randomPrice;
+  };
+
   return {
     subscribe,
     setPrice,
     set,
     getTotalPrice,
     resetStore,
+    getRandomPrice,
   };
 };
 

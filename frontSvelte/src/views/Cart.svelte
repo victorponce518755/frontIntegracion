@@ -11,6 +11,8 @@
   import { onMount } from "svelte";
 
   export let generalURL;
+  let url = `${generalURL}boletos/boleto`;
+  console.log(url);
 
   let listaEventos = [];
 
@@ -33,6 +35,81 @@
   const unsubscribe = priceStore.subscribe((prices) => {
     total = priceStore.getTotalPrice();
   });
+
+  //APARTIR DE AQUI EMPIEZA TODA LA LOGICA PARA COMPRAR Y GENERAR EL BOLETO/////
+
+  const generarAsientoAleatorio = () => {
+    const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numeros = "1234567890";
+    const letraAleatoria = letras.charAt(
+      Math.floor(Math.random() * letras.length)
+    );
+    const numeroAleatorio = numeros.charAt(
+      Math.floor(Math.random() * numeros.length)
+    );
+    return `${letraAleatoria}${numeroAleatorio}`;
+  };
+
+  const obtenerTipoAleatorio = () => {
+    const tipos = ["normal", "vip"];
+    const indiceAleatorio = Math.floor(Math.random() * tipos.length);
+    return tipos[indiceAleatorio];
+  };
+
+  //FETCH PARA GENERAR EL BOLETO##############################################
+  const pagar = async () => {
+    const listaEventos = cartStore.getEventIds();
+
+    if (listaEventos.length === 0) {
+      alert("No hay eventos en el carrito");
+      return;
+    }
+
+    try {
+      for (const evento of listaEventos) {
+        // Generar valores aleatorios para el boleto
+        const asiento = generarAsientoAleatorio();
+        const tipoAsiento = obtenerTipoAleatorio();
+        const precio = priceStore.getRandomPrice();
+        const idUsuario = localStorage.getItem("user_id"); // Reemplaza con el ID del usuario correspondiente
+        const requestBody = {
+          idEvento: evento,
+          idUsuario,
+          asiento,
+          tipoAsiento,
+          precio,
+        };
+
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        });
+
+        if (!response.ok) {
+          throw new Error("Error al crear el boleto");
+        }
+
+        const data = await response.json();
+        console.log("Boleto creado:", data);
+
+        // Eliminar el evento del carrito después de crear el boleto
+        cartStore.remove(evento);
+      }
+
+      alert("Boletos comprados con éxito");
+      location.reload();
+    } catch (error) {
+      console.error("Error al pagar:", error.message);
+      alert("Ocurrió un error al realizar el pago");
+    }
+  };
+
+  //TERMINA EL FETCH PARA GENERAR EL BOLETO##############################################
+
+  //AQUI TERMINA TODA LA LOGICA PARA COMPRAR Y GENERAR EL BOLETO/////
 </script>
 
 <Navbar />
