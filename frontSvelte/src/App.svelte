@@ -28,7 +28,7 @@
       <Login {loginURL} />
     </Route>
     <Route path="/perfil">
-      <Perfil />
+      <Perfil {generalURL} />
     </Route>
     <Route path="/detalle">
       <Detalles {eventoURL} />

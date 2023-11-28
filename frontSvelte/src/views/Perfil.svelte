@@ -1,9 +1,49 @@
 <script>
   import { Router, Link, Route } from "svelte-routing";
   import Navbar from "../components/Navbar.svelte";
+  import { onMount } from "svelte";
 
   let username = localStorage.getItem("username");
   import BoletosCard from "../components/misBoletos/boletosCard.svelte";
+
+  let idUsuario = localStorage.getItem("user_id");
+  export let generalURL;
+  let url = `${generalURL}boletos/boleto/user/${idUsuario}`;
+  console.log(url);
+
+  let eventos = [];
+
+  async function obtenerInfoEventos() {
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 405) {
+        console.log("Error: Método no permitido (405)");
+      } else if (response.ok) {
+        try {
+          const data = await response.json();
+          eventos = Array.isArray(data) ? data : [];
+          console.log("Datos obtenidos exitosamente", data);
+        } catch (error) {
+          console.error("Error al procesar la respuesta JSON:", error);
+        }
+      } else {
+        const text = await response.text();
+        console.log("Respuesta no válida:", text);
+      }
+    } catch (error) {
+      console.error("Error ", error);
+    }
+  }
+
+  onMount(() => {
+    obtenerInfoEventos();
+  });
 </script>
 
 <Navbar />
@@ -24,9 +64,14 @@
     <div class="col-md-3" />
   </div>
 
+  <!--Para cada evento genera un Boletos Card y le pasas su informacion a la carta -->
   <div class="row">
     <div class="col-md-3"></div>
-    <div class="col-md-6"><BoletosCard /></div>
+    <div class="col-md-6">
+      {#each eventos as evento}
+        <BoletosCard {evento} {generalURL} />
+      {/each}
+    </div>
     <div class="col-md-3"></div>
   </div>
 </main>
