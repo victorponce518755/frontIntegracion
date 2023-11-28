@@ -107,6 +107,7 @@
             <div class="col-md-6">
               <div class="images p-3">
                 <div class="text-center p-4">
+                  <!-- svelte-ignore a11y-missing-attribute -->
                   <img src={img} width="500" />
                 </div>
                 <div class="thumbnail text-center" />

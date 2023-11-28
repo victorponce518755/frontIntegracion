@@ -14,6 +14,7 @@
 
 <main>
   <div class="card" style="width: 15rem;">
+    <!-- svelte-ignore a11y-missing-attribute -->
     <img class="card-img-top" src={img} />
     <div class="card-body">
       <h5 class="card-title">{ev.nombre}</h5>
