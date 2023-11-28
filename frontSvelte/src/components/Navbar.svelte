@@ -120,7 +120,7 @@
           <Link class="nav-link" to="/">Eventos</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/login">Login</Link>
+          <Link class="nav-link" to="/login">Iniciar Sesión</Link>
         </li>
       </ul>
     </div>
