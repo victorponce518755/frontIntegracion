@@ -9,9 +9,10 @@
   import Cart from "./views/Cart.svelte";
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
+  import Mapa from "./views/mapa.svelte";
 
   // solo se cambia esta variable para cambiar la url de la api
-  export const generalURL = "http://34.171.190.75:5000/";
+  export const generalURL = "https://34.171.190.75:5000/";
   export const eventoURL = `${generalURL}`;
   export const loginURL = `${generalURL}`;
 </script>
@@ -41,6 +42,9 @@
     </Route>
     <Route path="/admiGraphics">
       <AdmiGraphics />
+    </Route>
+    <Route path="/mapa">
+      <Mapa {generalURL} />
     </Route>
   </Router>
 </main>
