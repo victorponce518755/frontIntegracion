@@ -9,7 +9,7 @@
   import Cart from "./views/Cart.svelte";
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
-  import Mapa from "./views/mapa.svelte";
+  //import Mapa from "./views/mapa.svelte";
 
   // solo se cambia esta variable para cambiar la url de la api
   export const generalURL = "https://34.171.190.75:5000/";
@@ -43,9 +43,9 @@
     <Route path="/admiGraphics">
       <AdmiGraphics />
     </Route>
-    <Route path="/mapa">
+    <!--     <Route path="/mapa">
       <Mapa {generalURL} />
-    </Route>
+    </Route> -->
   </Router>
 </main>
 
