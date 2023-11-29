@@ -8,7 +8,7 @@
 
   let idUsuario = localStorage.getItem("user_id");
   export let generalURL;
-  let url = `${generalURL}boletos/boleto/user/${idUsuario}`;
+  let url = `${generalURL}boletos/boleto/all`;
   console.log(url);
 
   let eventos = [];
