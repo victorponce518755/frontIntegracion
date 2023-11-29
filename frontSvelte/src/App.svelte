@@ -11,6 +11,7 @@
   import AdmiGraphics from "./views/admiGraphics.svelte";
   import Mapa from "./views/mapa.svelte";
   import MapaAdmi from "./views/MapaAdmi.svelte";
+  import PerfilAdmi from "./views/PerfilAdmi.svelte";
 
   // solo se cambia esta variable para cambiar la url de la api
   export const generalURL = "http://34.121.33.48:5000/";
@@ -50,6 +51,10 @@
     </Route>
     <Route path="/mapaAdmi">
       <MapaAdmi {microservicioURL} />
+    </Route>
+
+    <Route path="/perfilAdmi">
+      <PerfilAdmi {generalURL} />
     </Route>
   </Router>
 </main>
