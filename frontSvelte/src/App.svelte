@@ -17,7 +17,7 @@
   export const generalURL = "http://35.226.62.5:5000/";
   export const eventoURL = `${generalURL}`;
   export const loginURL = `${generalURL}`;
-  export const microservicioURL = "http://104.154.220.144:5000/";
+  export const microservicioURL = "http://34.173.119.244:5000/";
 </script>
 
 <main>
