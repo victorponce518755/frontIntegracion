@@ -9,12 +9,13 @@
   import Cart from "./views/Cart.svelte";
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
-  //import Mapa from "./views/mapa.svelte";
+  import Mapa from "./views/mapa.svelte";
 
   // solo se cambia esta variable para cambiar la url de la api
-  export const generalURL = "https://34.171.190.75:5000/";
+  export const generalURL = "http://34.121.33.48:5000/";
   export const eventoURL = `${generalURL}`;
   export const loginURL = `${generalURL}`;
+  export const microservicioURL = "http://104.154.220.144:5000/";
 </script>
 
 <main>
@@ -43,9 +44,9 @@
     <Route path="/admiGraphics">
       <AdmiGraphics />
     </Route>
-    <!--     <Route path="/mapa">
-      <Mapa {generalURL} />
-    </Route> -->
+    <Route path="/mapa">
+      <Mapa {microservicioURL} />
+    </Route>
   </Router>
 </main>
 

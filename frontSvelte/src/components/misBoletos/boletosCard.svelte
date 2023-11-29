@@ -2,6 +2,8 @@
   import { Router, Link, Route } from "svelte-routing";
   import { onMount } from "svelte";
   import img from "../eventCard/assets/concierto.jpg";
+  import { navigate } from "svelte-routing/src/history";
+  import { boletoStore } from "../../stores/boletoStore.js";
 
   export let evento;
 
@@ -44,6 +46,12 @@
   onMount(() => {
     obtenerInfoEventos();
   });
+
+  const redirigirAMapa = () => {
+    boletoStore.add(evento.idBoleto);
+
+    navigate("/mapa");
+  };
 </script>
 
 <main>
@@ -67,7 +75,8 @@
         </div>
 
         <div class="col-md-3 col-xl-2 offset-lg-1">
-          <button class="btn btn-success">Ver Mapa id: {evento.idEvento}</button
+          <button class="btn btn-success" on:click={redirigirAMapa}
+            >Ver Mapa</button
           >
         </div>
         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
