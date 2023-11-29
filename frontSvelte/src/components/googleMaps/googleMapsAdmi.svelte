@@ -4,7 +4,7 @@
   export let latitud;
   export let longitud;
   console.log("soy yo", latitud, longitud);
-  //imprimir el tipo de dato de latitud y longitud
+
   console.log(typeof latitud, typeof longitud);
 
   let map;
@@ -16,7 +16,7 @@
     };
     map = new google.maps.Map(document.getElementById("map"), {
       center: coordinates,
-      zoom: 12, // Puedes ajustar el nivel de zoom según tu preferencia
+      zoom: 12,
     });
 
     new google.maps.Marker({
@@ -43,6 +43,6 @@
 <style>
   #map {
     width: 100%;
-    height: 400px; /* Puedes ajustar la altura del mapa según tu diseño */
+    height: 400px;
   }
 </style>

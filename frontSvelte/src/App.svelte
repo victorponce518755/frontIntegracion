@@ -9,7 +9,7 @@
   import Cart from "./views/Cart.svelte";
   import AdmiEvents from "./views/admiEvents.svelte";
   import AdmiGraphics from "./views/admiGraphics.svelte";
-  import Mapa from "./views/mapa.svelte";
+  import Mapa from "./views/Mapa.svelte";
   import MapaAdmi from "./views/MapaAdmi.svelte";
   import PerfilAdmi from "./views/PerfilAdmi.svelte";
 

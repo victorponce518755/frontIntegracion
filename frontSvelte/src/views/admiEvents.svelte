@@ -37,18 +37,14 @@
         <div>
           <div class="row text-center">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <!-- <Sedes /> -->
-            </div>
+            <div class="col-md-8"></div>
             <div class="col-md-2"></div>
           </div>
         </div>
         <div>
           <div class="row text-center">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <!-- <Artistas /> -->
-            </div>
+            <div class="col-md-8"></div>
             <div class="col-md-2"></div>
           </div>
         </div>

@@ -5,10 +5,8 @@
 
   export let eventoURL;
 
-  //obtener valor de localstorage de user_id
   let user_id = localStorage.getItem("user_id");
 
-  // obtener el username de localstorage
   let username = localStorage.getItem("username");
 </script>
 

@@ -58,13 +58,11 @@
   }
 
   onMount(() => {
-    // Obtén directamente el valor de boletoId desde la store
     boletoId = boletoStore.getEventId();
     console.log("Valor actualizado de boletoId:", boletoId);
 
-    // Llama a obtenerCordenadas después de obtener boletoId
     obtenerCordenadas(boletoId).then(() => {
-      mapLoaded = true; // Establece la bandera en true cuando se obtengan las coordenadas
+      mapLoaded = true;
     });
   });
 </script>

@@ -33,9 +33,6 @@
         <li class="nav-item">
           <Link class="nav-link" to="/">Eventos</Link>
         </li>
-        <!-- <li class="nav-item">
-          <Link class="nav-link" to="/perfil">Perfil</Link>
-        </li> -->
         <li class="nav-item">
           <Link class="nav-link" to="/admiEvents">Administrar</Link>
         </li>

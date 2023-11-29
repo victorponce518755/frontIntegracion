@@ -10,22 +10,16 @@
   //Se tomo como base para el detalle del producto el siguiente link:
   //https://bbbootstrap.com/snippets/bootstrap-ecommerce-single-product-page-size-attribute-59223596
 
-  //es el url que viene desde App.svelte
   export let eventoURL;
 
-  //variables para obtener los datos del evento desde el store
   let evento = null;
 
-  //variable para obtener el id del evento desde el store
   let valorEventStore = null;
 
-  // variable para obtener la cantidad de boletos que se van a comprar
   let cantidadBoletos = 0;
 
-  //obtener valor de localstorage de user_id
   let user_id = localStorage.getItem("user_id");
 
-  //funcion para obtener los datos del evento, con el id que viene desde el store
   async function obtenerInfoEventos(id) {
     let url = `${eventoURL}eventos/evento/${id}`;
     try {
@@ -55,11 +49,10 @@
     }
   }
 
-  //funcion para obtener el id del evento desde el store, cuando cambie y se inicialice el componente
   onMount(() => {
     const unsubscribe = eventStore.subscribe((value) => {
       if (value !== null) {
-        valorEventStore = value; //almaceno su valor para usarlo en la funcion de agregar al carrito
+        valorEventStore = value;
         obtenerInfoEventos(value);
       }
     });
@@ -70,8 +63,6 @@
       new bootstrap.Tooltip(element);
     });
   });
-
-  //Funcion para agregar a la store de carritos, el id del evento y la cantidad de boletos que se van a comprar
 
   function agregarAlCarrito() {
     if (cantidadBoletos > 0 && evento) {

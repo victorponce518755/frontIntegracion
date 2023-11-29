@@ -64,7 +64,6 @@
     <div class="col-md-3" />
   </div>
 
-  <!--Para cada evento genera un Boletos Card y le pasas su informacion a la carta -->
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">

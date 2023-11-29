@@ -67,7 +67,6 @@
   <div class="container">
     <div class="row">
       <form class="container mt-5" on:submit|preventDefault={iniciarSesion}>
-        <!-- Email input -->
         <div class="row">
           <div class="col-md-3" />
           <div class="form-outline mb-4 col-md-6">
@@ -82,7 +81,6 @@
           <div class="col-md-3" />
         </div>
 
-        <!-- Password input -->
         <div class="row">
           <div class="col-md-3" />
           <div class="form-outline mb-4 col-md-6">
@@ -105,7 +103,6 @@
           <div class="col-md-5" />
         </div>
 
-        <!-- Register buttons -->
         <div class="text-center mt-1">
           <p>Not a member? <a href="#!">Register</a></p>
         </div>
