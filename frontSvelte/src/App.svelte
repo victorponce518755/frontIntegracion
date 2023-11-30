@@ -14,7 +14,7 @@
   import PerfilAdmi from "./views/PerfilAdmi.svelte";
 
   // solo se cambia esta variable para cambiar la url de la api
-  export const generalURL = "http://35.226.62.5:5000/";
+  export const generalURL = "http://35.223.97.26:5000/";
   export const eventoURL = `${generalURL}`;
   export const loginURL = `${generalURL}`;
   export const microservicioURL = "http://34.173.119.244:5000/";
